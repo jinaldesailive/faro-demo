@@ -1,6 +1,8 @@
 # faro-demo
 
-## Fixed some issues in this fork
+## >> Fixed some issues in this fork
+- There were some build issues as faro package in react is updated.
+- Fixed those issues with some changes.
 
 ## Mastering Frontend Observability in React with Grafana Faro
 
