@@ -3,6 +3,7 @@
 ## >> Fixed some issues in this fork
 - There were some build issues as faro package in react is updated.
 - Fixed those issues with some changes.
+- Added custom logs and error logs using Grafana faro.
 
 ## Mastering Frontend Observability in React with Grafana Faro
 
