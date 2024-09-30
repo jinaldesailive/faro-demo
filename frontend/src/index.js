@@ -17,7 +17,7 @@ import {
 import { TracingInstrumentation } from '@grafana/faro-web-tracing'
 
 initializeFaro({
-  url: 'https://faro-collector-prod-eu-west-2.grafana.net/collect/d6b5fc30b9d2b97253129f7f3cf0c9b8',
+  url: '<<Replace with Grafana collector with app key>>',
   app: {
     name: 'faro-demo',
     version: '1.0.0',

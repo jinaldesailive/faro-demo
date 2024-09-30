@@ -5,6 +5,7 @@ import GameCard from './GameCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import getUserUUID from '../utils/getUserUUID';
+import { faro, LogLevel } from '@grafana/faro-react'
 
 function Search() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -25,8 +26,21 @@ function Search() {
                 const response = await axios.get(`${backendUrl}/games?q=${encodeURIComponent(searchTerm)}`);
                 setIsLoading(false);
                 setGames(response.data);
+
+                faro.api.pushLog([`Search result for ${searchTerm} found ${response.data.length} games.`], {
+                    level: LogLevel.INFO,
+                    context: {
+                        searchTerm: searchTerm,
+                        results: `${response.data.length}`,
+                        userId: userUUID
+                    }
+                });
+
+                faro.api.pushEvent('search', { userId: `${userUUID}`, searchTerm: `${searchTerm}`}, 'search');
+
             } catch (error) {
                 console.error('Failed to fetch games:', error);
+                faro.api.pushError(error)
                 setIsLoading(false); 
             }
         };
