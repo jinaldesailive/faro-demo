@@ -1,4 +1,6 @@
-# fo11y-demo
+# faro-demo
+
+## Fixed some issues in this fork
 
 ## Mastering Frontend Observability in React with Grafana Faro
 
