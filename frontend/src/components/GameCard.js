@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
-import getUserUUID from '../utils/getUserUUID';
+//import getUserUUID from '../utils/getUserUUID';
 
 function GameCard({ game }) {
     const [isFavorited, setIsFavorited] = useState(false);
-    const userUUID = getUserUUID();
+    //const userUUID = getUserUUID();
 
     useEffect(() => {
         // Grab favorites from local storage and set game status if there is an existing entry
